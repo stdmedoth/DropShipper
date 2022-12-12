@@ -9,6 +9,9 @@
 <img src="project/database/er_diagram.png" alt="exemplo imagem">
 
 > Projeto ainda em desenvolvimento, em fase de criação dos requisitos funcionais.
+> O objetivo deste projeto é de facilitar a venda de produtos no modelo dropshipping.
+> Este sistema deverá gerenciar os produtos vindo de fornecedores nas plataformas de ecommerce e marketplace.
+> De forma que os vendedores dropshipping tenham menos trabalho para manter a gestão das revendas.
 
 ## 🚀 Instalando DropShipper
 
