@@ -10,29 +10,36 @@
 
 > Projeto ainda em desenvolvimento, em fase de criação dos requisitos funcionais.
 
-## 🚀 Instalando <DropShipper>
+## 🚀 Instalando DropShipper
 
-Para instalar o <DropShipper>, siga estas etapas:
+Para instalar o DropShipper, siga estas etapas:
 
 - No diretório backend:
 
   > composer install
+
   > php artisan migrate
+
   > php artisan passport:install
 
 - No diretório frontend:
-  npm install
 
-## ☕ Usando <DropShipper>
+  > npm install
+
+## ☕ Usando DropShipper
 
 Para usar <DropShipper>, siga estas etapas:
 
-npm run dev no diretório frontend
-php artisan serve no diretório backend
+- No diretório frontend
 
-## 📫 Contribuindo para <DropShipper>
+  > npm run dev
 
-Para contribuir com <DropShipper>, siga estas etapas:
+- No diretório backend
+  > php artisan serve
+
+## 📫 Contribuindo para DropShipper
+
+Para contribuir com DropShipper, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.
