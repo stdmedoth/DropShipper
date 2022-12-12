@@ -18,10 +18,20 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
 
+            // Dimension
+            $table->double('height');
+            $table->double('length');
+            $table->double('width');
+
             $table->double('price');
+            $table->double('weight');
 
+            $table->string('SKU');
 
+            $table->enum('status', ['UNLIST', 'NORMAL']);
+            $table->double('stock');
 
+            $table->foreignId('category_id')->references('id')->on('categories');
             $table->foreignId('marketplace_integration_id')->references('id')->on('integrations');
             $table->foreignId('provider_integration_id')->references('id')->on('integrations');
             $table->foreignId('user_id')->references('id')->on('users');
