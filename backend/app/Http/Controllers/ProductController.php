@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
-use App\Models\Product;
 
 class ProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return Product::where('user_id', '=', Auth::user()->id)->get();
     }
 
     /**
@@ -25,7 +31,6 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -36,7 +41,12 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+        $product = Product::create($data);
+        return response([
+            'product' => $product->first()
+        ]);
     }
 
     /**

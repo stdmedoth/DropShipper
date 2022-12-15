@@ -3,15 +3,19 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/stdmedoth/DropShipper?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/stdmedoth/DropShipper?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/stdmedoth/DropShipper?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/stdmedoth/DropShipper?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/stdmedoth/DropShipper?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/github/issues/stdmedoth/DropShipper?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/github/pr-raw/stdmedoth/DropShipper?style=for-the-badge)
+
+<img src="project/apresentation/logo_dropnship.png" alt="Logo DropShipper">
+
+> O objetivo deste projeto é de facilitar a venda de produtos no modelo dropshipping.
+> Este sistema deverá gerenciar os produtos vindo de fornecedores nas plataformas de ecommerce e marketplace.
+> De forma que os vendedores dropshipping tenham menos trabalho ao enviarem os produtos para as plataformas e ainda sejam notificados quando forem vendidos.
+
 
 <img src="project/database/er_diagram.png" alt="exemplo imagem">
 
 > Projeto ainda em desenvolvimento, em fase de criação dos requisitos funcionais.
-> O objetivo deste projeto é de facilitar a venda de produtos no modelo dropshipping.
-> Este sistema deverá gerenciar os produtos vindo de fornecedores nas plataformas de ecommerce e marketplace.
-> De forma que os vendedores dropshipping tenham menos trabalho ao enviarem os produtos para as plataformas e ainda sejam notificados quando forem vendidos.
 
 ## 🚀 Instalando DropShipper
 

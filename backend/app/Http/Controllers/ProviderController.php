@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProviderRequest;
 use App\Http\Requests\UpdateProviderRequest;
 use App\Models\Provider;
+use Illuminate\Support\Facades\Auth;
 
 class ProviderController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,10 @@ class ProviderController extends Controller
      */
     public function index()
     {
-        //
+        $providers = Provider::all();
+        return response([
+            'providers' => $providers
+        ]);
     }
 
     /**
@@ -36,7 +45,12 @@ class ProviderController extends Controller
      */
     public function store(StoreProviderRequest $request)
     {
-        //
+        $data = $request->all();
+
+        $provider = Provider::create($data);
+        return response([
+            'provider' => $provider
+        ]);
     }
 
     /**

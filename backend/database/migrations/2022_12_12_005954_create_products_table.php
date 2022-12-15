@@ -32,8 +32,8 @@ return new class extends Migration
             $table->double('stock');
 
             $table->foreignId('category_id')->references('id')->on('categories');
-            $table->foreignId('marketplace_integration_id')->references('id')->on('integrations');
-            $table->foreignId('provider_integration_id')->references('id')->on('integrations');
+            $table->unsignedBigInteger('provider_integration_id')->nullable()->default(NULL);
+            $table->foreign('provider_integration_id')->references('id')->on('integrations');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });

@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Provider;
+use App\Models\Integration;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreIntegrationRequest;
 use App\Http\Requests\UpdateIntegrationRequest;
-use App\Models\Integration;
 
 class IntegrationController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +23,10 @@ class IntegrationController extends Controller
      */
     public function index()
     {
-        //
+        $integrations = (new Integration)->all()->where('user_id', '=', Auth::user()->id);
+        return response([
+            'integrations' => $integrations
+        ]);
     }
 
     /**
@@ -36,7 +47,25 @@ class IntegrationController extends Controller
      */
     public function store(StoreIntegrationRequest $request)
     {
-        //
+        $data = (object)$request->all();
+        if (!Provider::where('id', $data->place_id)->exists()) {
+            return response([
+                'message' => 'O fornecedor inserido não existe'
+            ], 404);
+        }
+
+        $integration = Integration::create([
+            'name' => $data->title,
+            'client_id' => $data->client_id,
+            'client_secret' => $data->client_secret,
+            'partner_id' => $data->partner_id,
+            'place_id' => $data->place_id,
+            'auth_token' => $data->auth_token,
+            'user_id' => Auth::user()->id
+        ]);
+        return response([
+            'integration' => $integration
+        ]);
     }
 
     /**

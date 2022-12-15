@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Provider extends Model
 {
+    public $timestamps = true;
     use HasFactory;
+
+    protected $fillable = [
+        "name",
+        "url",
+        "logo",
+    ];
 }

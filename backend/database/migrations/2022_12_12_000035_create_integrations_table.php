@@ -16,11 +16,25 @@ return new class extends Migration
         Schema::create('integrations', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('client_id');
-            $table->string('client_secret');
-            $table->string('partner_id');
+
             $table->enum('type', ['marketplace', 'provider']);
             $table->integer('place_id');
+
+            $table->enum('auth_type', [
+                'authorization_code',
+                'client_credentials',
+                'bearer',
+                'token'
+            ]);
+
+
+            $table->string('client_id')->nullable();
+            $table->string('client_secret')->nullable();
+            $table->string('partner_id')->nullable();
+            $table->string('auth_code')->nullable();
+            $table->string('auth_token')->nullable();
+            $table->string('auth_expires')->nullable();
+
 
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
